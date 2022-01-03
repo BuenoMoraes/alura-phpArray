@@ -1,18 +1,24 @@
-(<?php
+<?php declare(strict_types=1);
 
-$saldos = [
-    2500,
-    3000,
-    4400,
-    1000,
-    8700,
-    9000
+require 'ArrayUtils.php';
+
+$correntistas_e_compras = [
+    "Giovanni",
+    "João",
+    12,
+    "Maria",
+    25,
+    "Luis",
+    "Luisa",
+    "12",
 ];
 
-foreach ($saldos as $saldo) {
-    echo "<p>O saldo é $saldo</p>";
-}
+echo "<pre>";
 
-sort($saldos);
+var_dump($correntistas_e_compras);
 
-echo"O menor saldo é $saldos[0]";
+ArrayUtils::remover(12, $correntistas_e_compras);
+
+var_dump($correntistas_e_compras);
+
+echo "</pre>";
